@@ -2,9 +2,13 @@ const APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=2a262761ca38c2ae60d443c06a0b2c78&query=";
 
+
 const main = document.getElementById("section");
 const form = document.getElementById("form");
 const search = document.getElementById("query");
+
+
+title.innerText = movieTitle;
 
 returnMovies(APILINK)
   function returnMovies(url){
@@ -30,7 +34,7 @@ returnMovies(APILINK)
         
         const center = document.createElement('center');
   
-        title.innerHTML = `${element.title}`;
+        title.innerHTML = `${element.title}<br><a href="movie.html?id=${element.id}&title=${element.title}">reviews</a>`;
         image.src = IMG_PATH + element.poster_path;
   
         center.appendChild(image);
